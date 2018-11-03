@@ -1,1 +1,90 @@
-﻿a1文件内容
+模拟登陆百度
+访问成功时的参数
+1. staticpage: https://www.baidu.com/cache/user/html/v3Jump.html（一样）
+2. charset: UTF-8（一样）
+3. token: ff5fa61ea2786b867ec96bcb0d00ebdc（不一样）
+4. tpl: mn（一样）
+5. subpro: （空）
+6. apiver: v3（一样）
+7. tt: 1541231943712（不一样）
+8. codestring: jxG3006c18e6363e27202bf159a43017e7e0afe980792057b2c（不一样）
+9. safeflg: 0（一样）
+10. u: https://www.baidu.com/（一样）
+11. isPhone: （空）
+12. detect: 1（一样）
+13. gid: 1F24093-BCAD-4323-9929-E4BF6ACF0720（不一样）
+14. quick_user: 0（一样）
+15. logintype: dialogLogin（一样）
+16. logLoginType: pc_loginDialog（一样）
+17. idc:  （空）
+18. loginmerge: true （一样）
+19. splogin: rate （一样）
+20.  username: 18728392281 （一样）
+21. password: o2VW+xMTmc28BC+wI+Bm3eCfmzog63QzCyHDHsOactRHmKxZ8uaNR1BAGKwTLH14NydYbm8HaRYQGy34ZQU+tO7+1F1bCHSTIlB3GWqsCp7XDZfupRSmlyFOOLP3L4jQuUziHu7O9StWqWgqMc14QC0guvBbqH9CB1aF4mdCmtQ=（不一样）
+22. verifycode: 灵魂晚霜（不一样）
+23. rsakey: 3fSboRKNJu9HCTxakuJOAhD2MZ6g2Ecl （不一样）
+24. crypttype: 12（一样）
+25. ppui_logintime: 5373249（不一样，5xxxxx）
+26. countrycode: （空）
+27. fp_uid: （空）
+28. fp_info: （空）
+29. loginversion: v4（一样）
+30 . dv: tk0.58286735632941641541226570684@ook0WB8TsX4kqbBru6nythGBN7HuA0Kjr-KyNy9~BwGVufOC-w8G9~8K-w8T3b8meH0HX5H3uAKyN0Hyh78Gh7KzBjOKt6EJyR4kse6G0X7ksw6C--4unhG32C0Hy7KyhGHuae8uN72KAR93XWLJHb8TseAkha6m--4unhG32C0Hy7KyhGHuae8uN72KAR93XWLJHb8T8~8kta6m--4unhG32C0Hy7KyhGHuae8uN72KAR93XWLJHb8T0e8ktajk0Gj6kEy4k9i4ks-6krX4unhG32C0Hy7KyhGHuae8uN72KAR93XWLJBa8GHe6m-e8Tsb8GqjAjHi6mea8G0wAC-eAkHbAGrw8G9g6mea8Gqe6C-jAksbAGrgAkri8weH0HX5H3uAKyN0Hyh78Gh7K~Od9VyaAk8j4krX8w-y8G9wAj0j45-_BqqIwqyphHzLhykh8C-w4kEiFkl2ob-4THi8TM~Aj8yAT8w6G0eAT0eAG0e8Ts~AG9-ATMghklI5ng958Z4wNz2z9YEVuUO5HYE~Nf4weyLVnROVRYOJ0_~kX8m--4krX8k8b8jE-4krX8Tqb8Gqi8m-e6Gs-4krX8Tqb8Gqg8q__（不一样）
+31. vcodefrom: login（一样）
+32. traceid: 408AC201（不一样）
+33. callback: parent.bd__pcbs__lxxfwi（不一样）
+
+
+--------------------------
+共33个参数,6空，15个一样的，12个不一样
+
+--------------------------------
+1。gid为js生成，，tt可以生成
+
+2。token生成
+访问网址
+--------------------------------
+https://passport.baidu.com/v2/api/?getapi&tpl=mn
+&apiver=v3&tt=1520951400830&class=login
+&gid=E8ED064-D480-4F3E-A5CE-BCF25F8DD1E2
+&loginversion=v4
+&logintype=dialogLogin
+&traceid=&callback=bd__cbs__6l1agx
+
+
+---------------------------------
+需要callback=js生成的
+搜一下bd__cbs__
+
+cookie的问题了
+
+3。dv
+--------------
+dv='tk'+Math.random(0+(new Date).gettime() 
+---------------
+rsakey和pubkey：	需要访问url
+
+Request URL: 
+https://passport.baidu.com/v2/getpublickey?
+token=ff5fa61ea2786b867ec96bcb0d00ebdc
+&tpl=mn&apiver=v3&tt=1541226603167
+&gid=1F24093-BCAD-4323-9929-E4BF6ACF0720
+&loginversion=v4&traceid=
+&callback=bd__cbs__5sbmd0
+
+-------------------
+参数:codestring
+可以访问url
+参数 verifycode 验证码
+
+参数 traceid
+
+
+
+
+
+
+
+
+
+
