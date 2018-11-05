@@ -84,11 +84,67 @@ pcid、servertime、nonce、rsakv参数：
 
 
 
+----------------------------------
+先看代码好不好用
+https://www.jianshu.com/p/db5be7e6edf4
 
+再：
+首先
+https://weibo.com/login.php
+7个参数
+headers={
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Connection: keep-alive
+Host: weibo.com
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36
+}
 
+判断验证
+验证码提交参数
+需要先访问：
+https://login.sina.com.cn/sso/prelogin.php?entry=weibo
+再把验证码返回。
+再提交post就可以了。
+---
+下一步：get
+url=
+https://login.sina.com.cn/sso/prelogin.php?entry=weibo
+&callback=sinaSSOController.preloginCallBack&su=MTgzMjgxMDA4ODA%3D&rsakt=mod&checkpin=1&client=ssologin.js(v1.4.19)&_=1541389797090
 
+headders={
+Referer: https://weibo.com/
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36
+}
+data={
+callback: sinaSSOController.preloginCallBack
+su: MTgzMjgxMDA4ODA=
+rsakt: mod
+checkpin: 1
+client: ssologin.js(v1.4.19)
+_: 1541389797090  ===int(time.time() * 1000)
 
+}
+可以得到六个数，解析：exectime,servertime;pcid;nonce;pubkey;rsakv'
+-----------------------------
+验证码的三个参数 
+r: 71067796
+s: 0（固定）
+p: gz-76a8b1f735cc4c9a7063250455b82aad17e0
+r=math.random(random.random()*math.pow(10,8))
+(p的值==picd；)
+---------------
 
+su
+user=base64.b64encode(user.encode())
+r=mathfloot(random.random()*math.pow(10,8))
+---
+prelt三个答案
+
+大概：prelt=random.randint(100,800)
+int(time.time()*1000)-exextime
 
 
 
