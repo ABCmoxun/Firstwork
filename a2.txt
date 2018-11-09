@@ -1,7 +1,13 @@
 
+----------------------------------
+先看代码好不好用
+https://www.jianshu.com/p/db5be7e6edf4
+模拟登录百度：https://www.jianshu.com/p/de16a1093c7e
+https://www.jianshu.com/p/777b7712249c
+收藏：https://www.jianshu.com/p/a56946c01d87
 
 
-
+------------------------
 新浪微博登陆网址 
 成功登陆的
 
@@ -82,12 +88,6 @@ su=user
 pcid、servertime、nonce、rsakv参数：
 
 
-
-
-----------------------------------
-先看代码好不好用
-https://www.jianshu.com/p/db5be7e6edf4
-
 再：
 首先
 https://weibo.com/login.php
@@ -145,21 +145,6 @@ prelt三个答案
 
 大概：prelt=random.randint(100,800)
 int(time.time()*1000)-exextime
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
