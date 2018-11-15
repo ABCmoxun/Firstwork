@@ -1,1 +1,75 @@
-﻿a1文件内容
+fiddler
+find可以查询任何字符串，和参数
+
+在可以发起请求（点击composer）
+
+可以发起get、post、.....
+
+左边中间空白框填写请求头
+左边下边填请求参数
+
+在Fiddler2模拟POST请求的时候，在请求头的输入框里面，
+需要设置 ContentType:application/x-www-form-urlencoded
+
+cookiedict={}
+requests.utils.add_dict_to_cookiejar(ssrequest.cookies,cookiedict)
+
+cookiejar是个对象
+将对象转为字典
+cookiedict={}
+for item in response.cookies:
+	cookiedict[item.name]=item.value
+
+
+
+#删除cookie、刷新浏览器
+driver.delete_all_cookies()
+driver.refresh()
+
+options = webdriver.ChromeOptions()
+# 设置中文
+options.add_argument('lang=zh_CN.UTF-8')
+# 更换头部
+
+browser = webdriver.Chrome(chrome_options=options)
+
+#添加cookie
+browser.add_cookie({xx:yy})
+
+
+from selenium import webdriver
+
+# 进入浏览器设置
+options = webdriver.ChromeOptions()
+#谷歌无头模式
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+# options.add_argument('window-size=1200x600')
+
+# 设置中文
+options.add_argument('lang=zh_CN.UTF-8')
+# 更换头部
+options.add_argument('user-agent="Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20"')
+
+#设置代理
+if proxy: 
+	options.add_argument('proxy-server=' + proxy)
+	options.add_argument('proxy-server=' +'192.168.0.28:808')
+if user_agent: 
+	options.add_argument('user-agent=' + user_agent)
+	options.add_argument('user-agent="UA"')
+
+browser = webdriver.Chrome(chrome_options=options)
+
+
+
+
+
+
+
+
+
+
+
+
+
