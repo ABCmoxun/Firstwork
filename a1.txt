@@ -1,6 +1,81 @@
 模拟登陆百度
 post提交数据后error_no的数字码：https://bbs.125.la/thread-13881883-1-2.html
 
+#参数gid；callback
+def get_idx(i):
+  if x!='x' and i!='y':
+      return i
+   t=random.randint(0,15)
+   if 'x'==i:
+      n=t
+    else:
+      n=(3 & t) if 3 & t else 8
+    return hex(n).replace('0x','')
+def guideRandom():
+  guide=[get_idx() for i in 'xxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx']
+  return ''.join(guide).upper()
+  
+  
+def baseN(num,b):
+  return ((num==0) and '0') or (baseN(num//b,b).lstrip('0')+'0123456789abcdefghijklmnopqrstuvwxyz'[num%b])
+def get_callback(prefix):
+  ran_num=math.floor(21474836448*random.random())
+  return prefix+baseN(ran_num,36)
+
+
+gid=guideRandom()
+callback=get_callback('bd__pcbs__')
+#请求token
+tokenurl=''
+tokens=re.search(r'"token":"(\w+?)",',response.text)
+
+#参数dv
+dv1='tk'+str(random.random())+str(time.time()*1000)
+dv2='字符串，固定值吧'
+
+#参数traceid
+def getRandom():
+  return int(random.random()*90+10)
+def createHeadID():
+  t=int(time.time()*1000)+getRandom()
+  n='%x'%t
+  i=len(6)
+  s=n[i-6:i].upper()
+  return s
+def getFlowID(e='login'):
+  t={'login':'01','reg':'02'}
+  return t[e]
+traceid=createHeadID()+getFlowID()
+
+#参数key和pubkey
+pubkeyurl=''
+
+
+keys=re.search(r'"key":\'(\w+?)\',',pubkeyresponse.text)
+pubkeys=re.search(r'"pubkey":\'([\S\s]+?)\',' ,pubkeyresponse.tex)
+pubkey=pubkey[1].replace('\\n','\n')
+
+#codestring
+
+
+codestrings=re.search(r'"codeString":"(\S+?)",' ,codestringresponse )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 访问成功时的参数
 1. staticpage: https://www.baidu.com/cache/user/html/v3Jump.html（一样）
 2. charset: UTF-8（一样）
