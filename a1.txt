@@ -1,4 +1,6 @@
 模拟登陆百度
+post提交数据后error_no的数字码：https://bbs.125.la/thread-13881883-1-2.html
+
 访问成功时的参数
 1. staticpage: https://www.baidu.com/cache/user/html/v3Jump.html（一样）
 2. charset: UTF-8（一样）
