@@ -10,6 +10,8 @@ find可以查询任何字符串，和参数
 
 在Fiddler2模拟POST请求的时候，在请求头的输入框里面，
 需要设置 ContentType:application/x-www-form-urlencoded
+在 Request Headers 栏添加一行 Content-Type: application/x-www-form-urlencoded ，这是 POST 请求需要的信息，区分大小写
+
 
 cookiedict={}
 requests.utils.add_dict_to_cookiejar(ssrequest.cookies,cookiedict)
