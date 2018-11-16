@@ -63,10 +63,23 @@ if user_agent:
 
 browser = webdriver.Chrome(chrome_options=options)
 
+selenium 验证码截图和云打码的使用
+https://blog.csdn.net/DonQuixote_/article/details/82468778
+
+from selenium.webdriver.support.ui import WebDriverWait
+WebDriverWait(driver,10).until(lambda driver:driver.find_element_by_id('xxxx'))
 
 
 
-
+left = captcha.location['x']
+top = captcha.location['y']
+right = captcha.location['x'] + captcha.size['width']
+bottom = captcha.location['y']+ captcha.size['height']
+img = Image.open('page.png')
+img = img.crop((left,top,right,bottom))
+img.save('captcha.png')
+#将截取的验证码上传到云打码进行在线识别
+text = yanzheng('captcha.png')
 
 
 
