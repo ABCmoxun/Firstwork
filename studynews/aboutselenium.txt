@@ -63,8 +63,7 @@ if user_agent:
 
 browser = webdriver.Chrome(chrome_options=options)
 
-selenium 验证码截图和云打码的使用
-https://blog.csdn.net/DonQuixote_/article/details/82468778
+
 
 from selenium.webdriver.support.ui import WebDriverWait
 WebDriverWait(driver,10).until(lambda driver:driver.find_element_by_id('xxxx'))
@@ -82,9 +81,18 @@ img.save('captcha.png')
 text = yanzheng('captcha.png')
 
 
+import pytesseract
+from PIL import Image
+image = Image.open("1.jpg")
+text = pytesseract.image_to_string(image,lang='chi_sim') #使用简体中文解析图片
 
 
 
-
+百度识别文档
+http://ai.baidu.com/docs#/OCR-Python-SDK/07883957
+selenium 验证码截图和云打码的使用
+https://blog.csdn.net/DonQuixote_/article/details/82468778
+可以去看下：
+https://blog.csdn.net/Sioon_XUX/article/details/78617160
 
 
