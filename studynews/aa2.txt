@@ -59,3 +59,32 @@ else:
 
 
 
+#tiebaname
+selector = html.xpath('//div[@id="ba_list"]/div')
+for i in selector[:2]:
+    url = i.xpath("./a[1]/@href")[0]
+    tiebaurl='http://tieba.baidu.com'+url
+    tiebaname=i.xpath(".//p[@class='ba_name']/text()")[0]
+    ba_desc=i.xpath(".//p[@class='ba_desc']/text()")[0]
+    person_num=i.xpath(".//span[@class='ba_m_num']/text()")[0]
+    tiezi_num = i.xpath(".//span[@class='ba_p_num']/text()")[0]
+    print(tiebaurl)
+    print(tiebaname)
+    print(ba_desc)
+    print(person_num,person_num)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
