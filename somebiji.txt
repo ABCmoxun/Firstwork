@@ -1,0 +1,156 @@
+有用链接
+间书
+https://www.jianshu.com/p/777b7712249c
+https://www.jianshu.com/p/de16a1093c7e
+
+------------------------
+
+fiddler
+
+find可以查询任何字符串，和参数
+在可以发起请求（点击composer）
+
+可以发起get、post、.....
+
+左边中间空白框填写请求头
+左边下边填请求参数
+
+在Fiddler2模拟POST请求的时候，在请求头的输入框里面，
+需要设置 ContentType:application/x-www-form-urlencoded
+
+cookiedict={}
+requests.utils.add_dict_to_cookiejar(ssrequest.cookies,cookiedict)
+
+cookiejar是个对象
+将对象转为字典
+cookiedict={}
+for item in response.cookies:
+	cookiedict[item.name]=item.value
+
+#删除cookie、刷新浏览器
+driver.delete_all_cookies()
+driver.refresh()
+
+options = webdriver.ChromeOptions()
+# 设置中文
+options.add_argument('lang=zh_CN.UTF-8')
+# 更换头部
+
+browser = webdriver.Chrome(chrome_options=options)
+#添加cookie
+browser.add_cookie({xx:yy})
+from selenium import webdriver
+# 进入浏览器设置
+
+options = webdriver.ChromeOptions()
+
+#谷歌无头模式
+
+options.add_argument('--headless')
+
+options.add_argument('--disable-gpu')
+
+# options.add_argument('window-size=1200x600')
+
+# 设置中文
+
+options.add_argument('lang=zh_CN.UTF-8')
+
+# 更换头部
+
+options.add_argument('user-agent="Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20"')
+
+#设置代理
+
+if proxy:
+    
+	options.add_argument('proxy-server=' + proxy)
+
+	options.add_argument('proxy-server=' +'192.168.0.28:808')
+if user_agent:
+    
+	options.add_argument('user-agent=' + user_agent)
+	options.add_argument('user-agent="UA"')
+
+
+browser = webdriver.Chrome(chrome_options=options)
+
+
+
+
+
+
+selenium 验证码截图
+
+https://blog.csdn.net/DonQuixote_/article/details/82468778
+
+
+from selenium.webdriver.support.ui import WebDriverWait
+WebDriverWait(driver,10).until(lambda driver:driver.find_element_by_id('xxxx'))
+
+left = captcha.location['x']
+
+top = captcha.location['y']
+
+right = captcha.location['x'] + captcha.size['width']
+
+bottom = captcha.location['y']+ captcha.size['height']
+
+
+import pytesseract
+
+from PIL import Image
+
+image = Image.open("1.jpg")
+
+text = pytesseract.image_to_string(image,lang='chi_sim') #使用简体中文解析图片
+
+print(text)
+
+百度识别文档
+http://ai.baidu.com/docs#/OCR-Python-SDK/07883957
+
+开发资源---文档中心---视觉技术下的文字识别---->API文档---SDK文档中的python语言
+
+
+#-------------------------------
+npm install crypto-js
+
+要用 AES 算法加密，首先我们要引入 crypto-js ，crypto-js 是一个纯 javascript 写的加密算法类库 ，
+可以非常方便地在 javascript 进行 MD5、SHA1、SHA2、SHA3、RIPEMD-160 哈希散列，
+进行 AES、DES、Rabbit、RC4、Triple DES 加解密
+
+
+
+all(iterable) not all() 
+all 列表， 元组元素都不为空或0
+
+ all([])  >>>True      # 空列表
+ all(())  >>>True      # 空元组
+
+label标签一般用于form表单内
+
+fiddler参考文档
+https://www.cnblogs.com/woaixuexi9999/p/9247705.html
+
+爬虫项目
+https://yq.aliyun.com/articles/644882?spm=a2c4e.11155472.0.0.55af7c40a9qtM8
+
+
+工具
+https://tool.lu/encdec/
+http://tool.oschina.net/codeformat/js
+内容不错：
+https://www.jianshu.com/p/1476a181fc57
+https://cuiqingcai.com/6182.html
+https://cuiqingcai.com/4048.html的
+##使用REDIS_URL链接Redis数据库, deconde_responses=True这个参数必须要，数据会变成byte形式 完全没法用
+reds = redis.Redis.from_url(REDIS_URL, db=2, decode_responses=True)
+
+进阶
+http://k.sina.com.cn/article_6436010038_17f9db8360010057d3.html
+cookie看
+scrapy中得到cookie
+cookies = response.cookies.get_dict()
+https://www.jianshu.com/p/7a1b8c144d83
+https://doc.scrapy.org/en/1.3/topics/downloader-middleware.html#cookies-mw
