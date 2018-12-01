@@ -155,3 +155,64 @@ scrapy中得到cookie
 cookies = response.cookies.get_dict()
 https://www.jianshu.com/p/7a1b8c144d83
 https://doc.scrapy.org/en/1.3/topics/downloader-middleware.html#cookies-mw
+#-------------------------------
+scrapy的安装
+https://blog.csdn.net/android_ztz/article/details/79243521
+https://www.jianshu.com/p/7a1b8c144d83
+https://doc.scrapy.org/en/1.3/topics/downloader-middleware.html#cookies-mw
+http://k.sina.com.cn/article_6436010038_17f9db8360010057d3.html
+cookie看
+scrapy中得到cookie
+cookies = response.cookies.get_dict()
+
+from scrapy.http.cookies import CookieJar
+cookiejar = CookieJar()
+cookiejar.extract_cookies(response, response.request)
+
+# 有些情况可能在发起登录之前会有一些请求,会陆续的产生一些cookie,
+可以在第一次请求的时候将cookiejar写入到request的meta中进行传递
+
+scrapy.Request(url, callback=self.xxx, meta={'cookiejar': cookiejar})
+
+# 之后每次需要传递这个cookiejar对象可以从response.meta中拿到
+
+scrapy.Request(url, callback=self.xxx, meta={'cookiejar': response.meta['cookiejar']})
+
+
+
+yield Request(url,callback=self.parse, cookies=self.cookie,headers=self.headers, meta=self.meta)
+
+保持上一次的cookie
+https://doc.scrapy.org/en/latest/topics/request-response.html
+yield Request(url,callback=self.parse,meta={'dont_merge_cookies': True})
+
+scrapy发起request请求并提交参数
+yield scrapy.FormRequest(url,callback=self.parse,formdata={},method="GET",errback=self.errparse,meta={})
+
+工具urllib encode转换
+https://www.cnblogs.com/caicaihong/p/5687522.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
