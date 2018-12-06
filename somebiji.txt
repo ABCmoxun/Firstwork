@@ -241,7 +241,8 @@ https://blog.csdn.net/selina361/article/details/79708501?utm_source=blogxgwz8
 import redis
 pool=redis.ConnectionPool(host='',port=6379,db=0,password=''，decode_responses=True)
 r=redis.StrictRedis(connection_pool=pool)
-
+崔庆才的github
+https://github.com/Python3WebSpider/ProxyPool/tree/master/proxypool
 
 
 
