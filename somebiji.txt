@@ -244,6 +244,27 @@ r=redis.StrictRedis(connection_pool=pool)
 崔庆才的github
 https://github.com/Python3WebSpider/ProxyPool/tree/master/proxypool
 
+字符串转换成字典：
+https://www.cnblogs.com/OnlyDreams/p/7850920.html
+
+Redis 发布订阅
+https://blog.csdn.net/selina361/article/details/79708501?utm_source=blogxgwz8
+import redis
+pool=redis.ConnectionPool(host='',port=6379,db=0,password=''，decode_responses=True)
+r=redis.StrictRedis(connection_pool=pool)
+
+
+
+#在parse方法后
+from scrapy shell import inspect_response
+inspect_response(response,self)
+
+谷歌插件
+xpath下载地址：
+自己百度
+
+Toggle的下载地址
+https://52crx.com/download.html?pid=30139
 
 
 
