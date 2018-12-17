@@ -1,0 +1,29 @@
+安装fiddler，使用默认安装就好了
+第一次需要配置一下
+Tools-->options-->Https-->(勾选三个) captuere,Decryptxx,Ignorexx(若有弹出框要点肯定的)
+-->Actions(选第一个：Trust tools)--ok
+
+主页面：
+左边：
+需要抓取：File-->captuure(第一个)是否勾选 #左下capturing是否工作
+清除内容：X-->Remove all
+停止抓取：File-->captuure(第一个)
+左下：黑色条框可以输入指令：
+
+find很重要，查找内容
+
+右边上面：Inspectors(筛选)、composer（发送请求）
+一般看：Rew(!!!), webForms,cookies
+
+右边下面：
+需要点：Response body is encodeed.click to decode
+一般看：Rew(!!!)，Json,Textviews,imagview(有图片时)
+
+
+
+
+
+
+
+
+
