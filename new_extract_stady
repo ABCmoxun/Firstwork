@@ -1,0 +1,9 @@
+python操作excel表
+import xlwt
+f=xlwt.Workbook()
+sheet1=f.add_sheet('3D',cell_overwrite=True)
+row1=['xx','yy']
+
+for j in range(0,len(row0))
+  sheet1.write(0,j,row0[j])    #0 行，j列，内容
+f.save('3D.xls')
