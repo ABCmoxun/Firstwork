@@ -1,3 +1,12 @@
+
+fiddler参考文档
+https://www.cnblogs.com/woaixuexi9999/p/9247705.html
+谷歌插件
+xpath helper下载地址：自己百度
+Toggle的下载地址（js加载）
+https://52crx.com/download.html?pid=30139
+
+
 安装fiddler，使用默认安装就好了
 第一次需要配置一下
 Tools-->options-->Https-->(勾选三个) captuere,Decryptxx,Ignorexx(若有弹出框要点肯定的)
@@ -10,20 +19,20 @@ Tools-->options-->Https-->(勾选三个) captuere,Decryptxx,Ignorexx(若有弹�
 停止抓取：File-->captuure(第一个)
 左下：黑色条框可以输入指令：
 
-find很重要，查找内容
+find很重要，find可以查询任何字符串，和参数（url）
 
 右边上面：Inspectors(筛选)、composer（发送请求）
-一般看：Rew(!!!), webForms,cookies
+
+
+composer：在可以发起请求（点击composer），可以发起get、post、.....
+左边中间空白框填写请求头，左边下边填请求参数
+在Fiddler2模拟POST请求的时候，在请求头的输入框里面，
+需要设置 ContentType:application/x-www-form-urlencoded
+-->excute
+
 
 右边下面：
-需要点：Response body is encodeed.click to decode
-一般看：Rew(!!!)，Json,Textviews,imagview(有图片时)
-
-
-
-
-
-
-
+request一般看：Rew(!!!), webForms,cookies
+response一般看：Rew(!!!)，Json,Textviews,imagview(有图片时)   #需要点：Response body is encodeed.click to decode
 
 
