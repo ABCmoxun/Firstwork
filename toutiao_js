@@ -1,5 +1,7 @@
 头条js调试
-
+头条js解析：https://www.colabug.com/3297769.html
+http://www.cnblogs.com/xuchunlin/p/7097391.html
+这里是推荐用的
 function a(t, e) {
 	var i = (65535 & t) + (65535 & e)
 	, n = (t >> 16) + (e >> 16) + (i >> 16);
@@ -187,6 +189,46 @@ var t = Math.floor((new Date).getTime() / 1e3)
 i=k(t, e, i)
 i = i.toString().toUpperCase(),
 res= s(t,i)
+
+topic科技用的
+e.getHoney = function() {
+	var t = Math.floor((new Date).getTime() / 1e3)
+	, e = t.toString(16).toUpperCase()
+	, i = md5(t).toString().toUpperCase();
+	if (8 != e.length)
+	return {
+		as: "479BB4B7254C150",
+		cp: "7E0AC8874BB0985"
+	};
+	for (var n = i.slice(0, 5), a = i.slice(-5), s = "", o = 0; 5 > o; o++)
+	s += n[o] + e[o];
+	for (var r = "", c = 0; 5 > c; c++)
+	r += e[c + 3] + a[c];
+	return {
+		as: "A1" + s + e.slice(-3),
+		cp: e.slice(0, 3) + r + "E1"
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
