@@ -20,6 +20,8 @@ scrapy.Request(url, callback=self.xxx, meta={'cookiejar': cookiejar}
 http://www.cnblogs.com/OnlyDreams/p/7850920.html
 mysql中的text不能存list
 jieba，WordCloud库，
+时间转换：https://blog.csdn.net/qq_37193537/article/details/78987949，https://blog.csdn.net/bug4pie/article/details/80834090
+
 
 gerapy库 爬虫管理库
 https://blog.csdn.net/fengltxx/article/details/79894839
