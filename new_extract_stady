@@ -15,9 +15,14 @@ from scrapy.http.cookies import CookieJar    # 该模块继承自内置的http.c
 cookie_jar = CookieJar()
 cookiejar.extract_cookies(response, response.request)
 scrapy.Request(url, callback=self.xxx, meta={'cookiejar': cookiejar}
+
 字符串转字典：
 http://www.cnblogs.com/OnlyDreams/p/7850920.html
+mysql中的text不能存list
+jieba，WordCloud库，
 
+gerapy库 爬虫管理库
+https://blog.csdn.net/fengltxx/article/details/79894839
 
 
 
