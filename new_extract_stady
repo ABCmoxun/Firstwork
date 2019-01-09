@@ -27,5 +27,10 @@ gerapy库 爬虫管理库
 https://blog.csdn.net/fengltxx/article/details/79894839
 Request payload
 https://blog.csdn.net/zwq912318834/article/details/79930423
+https://blog.csdn.net/lilongsy/article/details/77446595
+参考: 
+http://scrapy-chs.readthedocs.io/zh_CN/0.24/topics/request-response.html?highlight=post#formrequest-objects 
+https://stackoverflow.com/questions/39012902/scrapy-making-request-with-post-method
+--------------------- 
 
 
