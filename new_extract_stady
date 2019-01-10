@@ -27,10 +27,24 @@ gerapy库 爬虫管理库
 https://blog.csdn.net/fengltxx/article/details/79894839
 Request payload
 https://blog.csdn.net/zwq912318834/article/details/79930423
-https://blog.csdn.net/lilongsy/article/details/77446595
 参考: 
 http://scrapy-chs.readthedocs.io/zh_CN/0.24/topics/request-response.html?highlight=post#formrequest-objects 
 https://stackoverflow.com/questions/39012902/scrapy-making-request-with-post-method
 --------------------- 
+requests库提交Request payload
+payloadHeader={ 'Content-Type': 'application/json',...}
+payloadData={'':''...},某个参数的值为null,应改为None.
+r = requests.post(url, data=json.dumps(payloadData), headers=payloadHeader)
+
+scrapy中提交Request payload
+https://blog.csdn.net/qq_38044574/article/details/83339439
+1、payloadData={'':''...},某个参数的值为null,应改为None.
+2、headers中，一定要添加‘Conten-Type’:‘application/json‘
+3、虽然提示的是post请求，但因为不是参数为formdata，所以还是要用scrapy.Request,并不需要FormdataRequeat.
+4、在request中，要使用method=“POST”,来明确这个请求类型为POST
+5、将payload参数构建完成后，需要用json.dumps，把该参数变成json格式的数据
+ yield scrapy.Request( url,method="POST",headers=self.headers,body=json.dumps(self.data), dont_filter=True, callback=self.parse)
+
+
 
 
