@@ -191,6 +191,9 @@ url.parse.unquote()
 安装jieba
 pip install jieba
 
+pkuseg 分词: 
+pip install pkuseg
+https://github.com/yishuihanhan/pkuseg-python
 1. 分词
 --------
 https://github.com/fxsjy/jieba#3
