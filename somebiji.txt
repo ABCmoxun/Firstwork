@@ -47,17 +47,13 @@ options = webdriver.ChromeOptions()
 #谷歌无头模式
 
 options.add_argument('--headless')
-
 options.add_argument('--disable-gpu')
-
 # options.add_argument('window-size=1200x600')
 
 # 设置中文
-
 options.add_argument('lang=zh_CN.UTF-8')
 
 # 更换头部
-
 options.add_argument('user-agent="Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20"')
 
 #设置代理
@@ -95,9 +91,7 @@ bottom = captcha.location['y']+ captcha.size['height']
 import pytesseract
 
 from PIL import Image
-
 image = Image.open("1.jpg")
-
 text = pytesseract.image_to_string(image,lang='chi_sim') #使用简体中文解析图片
 
 print(text)
@@ -172,8 +166,6 @@ scrapy.Request(url, callback=self.xxx, meta={'cookiejar': cookiejar})
 
 scrapy.Request(url, callback=self.xxx, meta={'cookiejar': response.meta['cookiejar']})
 
-
-
 yield Request(url,callback=self.parse, cookies=self.cookie,headers=self.headers, meta=self.meta)
 
 保持上一次的cookie
@@ -189,17 +181,19 @@ url.parse.unquote()
 
 #-----------
 安装jieba
-pip install jieba
-
+pip install jieba 
+https://github.com/fxsjy/jieba#3
+参考 ：https://blog.csdn.net/still_night/article/details/78998659；http://www.ruanyifeng.com/blog/2013/03/tf-idf.html
 pkuseg 分词: 
 pip install pkuseg
 https://github.com/yishuihanhan/pkuseg-python
+
+wordcloud 云词 https://github.com/amueller/word_cloud
+参考：https://blog.csdn.net/cy776719526/article/details/80171790;https://blog.csdn.net/u010309756/article/details/67637930
+https://blog.csdn.net/qq_25819827/article/details/78991733
+
 1. 分词
 --------
-https://github.com/fxsjy/jieba#3
-https://blog.csdn.net/still_night/article/details/78998659
-http://www.ruanyifeng.com/blog/2013/03/tf-idf.html
-
 jieba.cut 方法接受三个输入参数: 需要分词的字符串；
 cut_all 参数用来控制是否采用全模式，默认Flase，一般也用flase
 ；HMM 参数用来控制是否使用 HMM 模型
@@ -211,7 +205,6 @@ jieba.cut_for_search 方法接受两个参数：需要分词的字符串；是�
 jieba.cut 以及 `jieba.cut_for_search` 返回的结构都是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)，或者用
 jieba.lcut 以及 `jieba.lcut_for_search` 直接返回 list
 jieba.Tokenizer(dictionary=DEFAULT_DICT)` 新建自定义分词器，可用于同时使用不同词典。`jieba.dt` 为默认分词器，所有全局分词相关函数都是该分词器的映射。
-
 
 jb=jieba.cut(str)---> 一个可迭代对象
 变成列表
@@ -226,29 +219,24 @@ counts = Counter(abc)
 
 counter.most_common（）--〉变成一个含元组的列表
 
-
 有个字符串相似度检测的库，difflib
 import difflib
-
 query_str = '市公安局'
 s1 = '广州市邮政局'
-
 difflib.SequenceMatcher(None, query_str, s1).quick_ratio() 
 
 
 字符串转换成字典：
 https://www.cnblogs.com/OnlyDreams/p/7850920.html
-
 Redis 发布订阅
 https://blog.csdn.net/selina361/article/details/79708501?utm_source=blogxgwz8
+
 import redis
 pool=redis.ConnectionPool(host='',port=6379,db=0,password=''，decode_responses=True)
 r=redis.StrictRedis(connection_pool=pool)
+
 崔庆才的github
 https://github.com/Python3WebSpider/ProxyPool/tree/master/proxypool
-
-字符串转换成字典：
-https://www.cnblogs.com/OnlyDreams/p/7850920.html
 
 Redis 发布订阅
 https://blog.csdn.net/selina361/article/details/79708501?utm_source=blogxgwz8
@@ -261,28 +249,6 @@ r=redis.StrictRedis(connection_pool=pool)
 #在parse方法后
 from scrapy shell import inspect_response
 inspect_response(response,self)
-
-谷歌插件
-xpath下载地址：
-自己百度
-
-Toggle的下载地址
-https://52crx.com/download.html?pid=30139
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
