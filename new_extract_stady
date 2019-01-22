@@ -44,7 +44,9 @@ https://blog.csdn.net/qq_38044574/article/details/83339439
 4、在request中，要使用method=“POST”,来明确这个请求类型为POST
 5、将payload参数构建完成后，需要用json.dumps，把该参数变成json格式的数据
  yield scrapy.Request( url,method="POST",headers=self.headers,body=json.dumps(self.data), dont_filter=True, callback=self.parse)
-
+在mysql中存在就不插入，不存在就插入：
+insert into tb_name(id,xx,yy) select id1,xx1,yy1 from dual where not exists(select * from tb_name where xx=xx1);
+存在就更新不存在就插入：
 
 
 
