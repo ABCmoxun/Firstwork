@@ -7,6 +7,8 @@ json在线转换：https://www.json.cn/；http://www.bejson.com/jsoneditoronline
 
 
 谷歌插件
+谷歌商店：https://chrome.google.com/webstore/category/extensions?
+cookie插件: EditThisCookie
 地址： https://52crx.com/lists.html
 xpath下载地址：自己百度
 谷歌服务助手：自己百度：http://www.downza.cn/soft/266039.html
@@ -19,7 +21,6 @@ Disable Cache(禁用缓存 – 开启这个就测试接口就不用每次到高�
 Preserve log(保留日志 — 刷新重新加载也保留)
 Hide data URLs – 这个是过滤data协议的东西（比如base64的图片），若是页面请求非常多的情况下，勾选这个，
 可以让我们更快速的定位一些请求，因为默认展出的是ALL（所有请求）；
-
 
 
 js调试工具
