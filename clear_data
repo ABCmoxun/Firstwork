@@ -1,0 +1,45 @@
+
+https://www.cnblogs.com/Undo-self-blog/p/8423851.html
+
+linux社区python和opencv
+https://www.linuxidc.com/topicnews.aspx?tid=17
+https://www.linuxidc.com/Linux/2015-08/121400.htm
+https://opencv.org/releases.html（发布）
+python时间转换：
+https://www.linuxidc.com/Linux/2018-12/155919.htm
+pip install cx_Oracle==5.2.1
+----------------------
+df = pd.DataFrame(pd.read_csv(‘name.csv’,header=1)) 
+df = pd.DataFrame(pd.read_excel(‘name.xlsx’))
+header = 0是默认情况（即不标明，默认就是header = 0），表示以数据的第一行为列索引
+
+三、数据表清洗
+bool值
+df.isnull()
+df.notnull()
+df['price'].notnull().value_counts()
+1、用数字0填充空值：
+df.fillna(value=0)
+df.dropna()
+2、使用列prince的均值对NA进行填充：
+df['price'].fillna(df['price'].mean())
+3、清楚city字段的字符空格：
+df['city']=df['city'].map(str.strip)
+4、大小写转换：
+df['city']=df['city'].str.lower()==df['city'].map(str.upper)
+5、更改数据格式：
+df['price'].astype('int')
+6、更改列名称：
+df.rename(columns={'category': 'category-size'})
+7、删除后出现的重复值：
+df['city'].duplicated()
+df['city'].drop_duplicates()
+8、删除先出现的重复值：
+df['city'].drop_duplicates(keep='last')
+9、数据替换：
+df['city'].replace('sh', 'shanghai')
+
+
+	
+
+
