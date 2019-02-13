@@ -1,10 +1,7 @@
 fiddler
 find可以查询任何字符串，和参数
-
 在可以发起请求（点击composer）
-
 可以发起get、post、.....
-
 左边中间空白框填写请求头
 左边下边填请求参数
 
@@ -12,10 +9,8 @@ find可以查询任何字符串，和参数
 需要设置 ContentType:application/x-www-form-urlencoded
 在 Request Headers 栏添加一行 Content-Type: application/x-www-form-urlencoded ，这是 POST 请求需要的信息，区分大小写
 
-
 cookiedict={}
 requests.utils.add_dict_to_cookiejar(ssrequest.cookies,cookiedict)
-
 cookiejar是个对象
 将对象转为字典
 cookiedict={}
@@ -25,6 +20,7 @@ for item in response.cookies:
 
 
 #删除cookie、刷新浏览器
+driver.quit()  退出浏览器  driver.close() 关闭当前浏览网页
 driver.delete_all_cookies()
 driver.refresh()
 
@@ -32,9 +28,7 @@ options = webdriver.ChromeOptions()
 # 设置中文
 options.add_argument('lang=zh_CN.UTF-8')
 # 更换头部
-
 browser = webdriver.Chrome(chrome_options=options)
-
 #添加cookie
 browser.add_cookie({xx:yy})
 
@@ -69,7 +63,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 WebDriverWait(driver,10).until(lambda driver:driver.find_element_by_id('xxxx'))
 
 
-
 left = captcha.location['x']
 top = captcha.location['y']
 right = captcha.location['x'] + captcha.size['width']
@@ -81,18 +74,5 @@ img.save('captcha.png')
 text = yanzheng('captcha.png')
 
 
-import pytesseract
-from PIL import Image
-image = Image.open("1.jpg")
-text = pytesseract.image_to_string(image,lang='chi_sim') #使用简体中文解析图片
 
-
-
-百度识别文档
-http://ai.baidu.com/docs#/OCR-Python-SDK/07883957
-selenium 验证码截图和云打码的使用
-https://blog.csdn.net/DonQuixote_/article/details/82468778
-可以去看下：
-https://blog.csdn.net/Sioon_XUX/article/details/78617160
-http://www.cnblogs.com/mswyf/p/9361917.html
 
