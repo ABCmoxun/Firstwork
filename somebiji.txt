@@ -1,130 +1,4 @@
 有用链接
-间书
-https://www.jianshu.com/p/777b7712249c
-https://www.jianshu.com/p/de16a1093c7e
-
-------------------------
-
-fiddler
-
-find可以查询任何字符串，和参数
-在可以发起请求（点击composer）
-
-可以发起get、post、.....
-
-左边中间空白框填写请求头
-左边下边填请求参数
-
-在Fiddler2模拟POST请求的时候，在请求头的输入框里面，
-需要设置 ContentType:application/x-www-form-urlencoded
-
-cookiedict={}
-requests.utils.add_dict_to_cookiejar(ssrequest.cookies,cookiedict)
-
-cookiejar是个对象
-将对象转为字典
-cookiedict={}
-for item in response.cookies:
-	cookiedict[item.name]=item.value
-
-#删除cookie、刷新浏览器
-driver.delete_all_cookies()
-driver.refresh()
-
-options = webdriver.ChromeOptions()
-# 设置中文
-options.add_argument('lang=zh_CN.UTF-8')
-# 更换头部
-
-browser = webdriver.Chrome(chrome_options=options)
-#添加cookie
-browser.add_cookie({xx:yy})
-from selenium import webdriver
-# 进入浏览器设置
-
-options = webdriver.ChromeOptions()
-
-#谷歌无头模式
-
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')
-# options.add_argument('window-size=1200x600')
-
-# 设置中文
-options.add_argument('lang=zh_CN.UTF-8')
-
-# 更换头部
-options.add_argument('user-agent="Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20"')
-
-#设置代理
-
-if proxy:
-    
-	options.add_argument('proxy-server=' + proxy)
-
-	options.add_argument('proxy-server=' +'192.168.0.28:808')
-if user_agent:
-    
-	options.add_argument('user-agent=' + user_agent)
-	options.add_argument('user-agent="UA"')
-
-
-browser = webdriver.Chrome(chrome_options=options)
-
-
-selenium 验证码截图
-https://blog.csdn.net/DonQuixote_/article/details/82468778
-
-from selenium.webdriver.support.ui import WebDriverWait
-WebDriverWait(driver,10).until(lambda driver:driver.find_element_by_id('xxxx'))
-
-captcha=browser.find_element_by_xx('')
-left = captcha.location['x']
-
-top = captcha.location['y']
-
-right = captcha.location['x'] + captcha.size['width']
-
-bottom = captcha.location['y']+ captcha.size['height']
-
-
-import pytesseract
-
-from PIL import Image
-image = Image.open("1.jpg")
-text = pytesseract.image_to_string(image,lang='chi_sim') #使用简体中文解析图片
-
-print(text)
-
-百度识别文档
-http://ai.baidu.com/docs#/OCR-Python-SDK/07883957
-
-开发资源---文档中心---视觉技术下的文字识别---->API文档---SDK文档中的python语言
-
-
-#-------------------------------
-npm install crypto-js
-
-要用 AES 算法加密，首先我们要引入 crypto-js ，crypto-js 是一个纯 javascript 写的加密算法类库 ，
-可以非常方便地在 javascript 进行 MD5、SHA1、SHA2、SHA3、RIPEMD-160 哈希散列，
-进行 AES、DES、Rabbit、RC4、Triple DES 加解密
-
-
-
-all(iterable) not all() 
-all 列表， 元组元素都不为空或0
-
- all([])  >>>True      # 空列表
- all(())  >>>True      # 空元组
-
-label标签一般用于form表单内
-
-fiddler参考文档
-https://www.cnblogs.com/woaixuexi9999/p/9247705.html
-
-爬虫项目
-https://yq.aliyun.com/articles/644882?spm=a2c4e.11155472.0.0.55af7c40a9qtM8
-
 
 工具
 https://tool.lu/encdec/
@@ -135,6 +9,103 @@ https://cuiqingcai.com/6182.html
 https://cuiqingcai.com/4048.html的
 ##使用REDIS_URL链接Redis数据库, deconde_responses=True这个参数必须要，数据会变成byte形式 完全没法用
 reds = redis.Redis.from_url(REDIS_URL, db=2, decode_responses=True)
+间书
+https://www.jianshu.com/p/777b7712249c
+https://www.jianshu.com/p/de16a1093c7e
+
+------------------------
+fiddler
+find可以查询任何字符串，和参数
+在可以发起请求（点击composer）
+可以发起get、post、.....
+左边中间空白框填写请求头
+左边下边填请求参数
+
+在Fiddler2模拟POST请求的时候，在请求头的输入框里面，
+需要设置 ContentType:application/x-www-form-urlencoded
+
+cookiedict={}
+requests.utils.add_dict_to_cookiejar(ssrequest.cookies,cookiedict)
+
+cookiejar是个对象,将对象转为字典
+cookiedict={}
+for item in response.cookies:
+	cookiedict[item.name]=item.value
+
+options = webdriver.ChromeOptions()
+options.add_argument('lang=zh_CN.UTF-8')  # 设置中文
+browser = webdriver.Chrome(chrome_options=options)  # 更换头部
+#添加cookie
+browser.add_cookie({xx:yy})
+
+https://blog.csdn.net/qq_34869975/article/details/78785554  #看看
+from selenium import webdriver
+options = webdriver.ChromeOptions()  # 进入浏览器设置
+#谷歌无头模式
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')  #两个一起使用
+
+# options.add_argument('window-size=1200x600')
+options.add_argument('lang=zh_CN.UTF-8') # 设置中文
+
+# 更换头部
+options.add_argument('user-agent="Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20"')
+
+#设置代理
+if proxy:
+	options.add_argument('proxy-server=' + proxy)
+	options.add_argument('proxy-server=' +'192.168.0.28:808')
+if user_agent:
+	options.add_argument('user-agent=' + user_agent)
+	options.add_argument('user-agent="UA"')
+browser = webdriver.Chrome(chrome_options=options)
+
+#删除cookie、刷新浏览器
+driver.delete_all_cookies()
+driver.refresh()
+driver.quit()
+
+selenium 验证码截图
+https://blog.csdn.net/DonQuixote_/article/details/82468778
+from selenium.webdriver.support.ui import WebDriverWait
+WebDriverWait(driver,10).until(lambda driver:driver.find_element_by_id('xxxx'))
+
+captcha=browser.find_element_by_xx('')
+left = captcha.location['x']
+top = captcha.location['y']
+right = captcha.location['x'] + captcha.size['width']
+bottom = captcha.location['y']+ captcha.size['height']
+
+import pytesseract
+from PIL import Image
+image = Image.open("1.jpg")
+text = pytesseract.image_to_string(image,lang='chi_sim') #使用简体中文解析图片
+print(text)
+
+百度识别文档
+http://ai.baidu.com/docs#/OCR-Python-SDK/07883957
+开发资源---文档中心---视觉技术下的文字识别---->API文档---SDK文档中的python语言
+
+
+#-------------------------------
+npm install crypto-js
+要用 AES 算法加密，首先我们要引入 crypto-js ，crypto-js 是一个纯 javascript 写的加密算法类库 ，
+可以非常方便地在 javascript 进行 MD5、SHA1、SHA2、SHA3、RIPEMD-160 哈希散列，
+进行 AES、DES、Rabbit、RC4、Triple DES 加解密
+
+
+
+all(iterable) not all() 
+all 列表， 元组元素都不为空或0
+ all([])  >>>True      # 空列表
+ all(())  >>>True      # 空元组
+
+label标签一般用于form表单内
+
+fiddler参考文档
+https://www.cnblogs.com/woaixuexi9999/p/9247705.html
+爬虫项目
+https://yq.aliyun.com/articles/644882?spm=a2c4e.11155472.0.0.55af7c40a9qtM8
 
 进阶
 http://k.sina.com.cn/article_6436010038_17f9db8360010057d3.html
@@ -161,19 +132,18 @@ cookiejar.extract_cookies(response, response.request)
 可以在第一次请求的时候将cookiejar写入到request的meta中进行传递
 
 scrapy.Request(url, callback=self.xxx, meta={'cookiejar': cookiejar})
-
 # 之后每次需要传递这个cookiejar对象可以从response.meta中拿到
-
 scrapy.Request(url, callback=self.xxx, meta={'cookiejar': response.meta['cookiejar']})
-
 yield Request(url,callback=self.parse, cookies=self.cookie,headers=self.headers, meta=self.meta)
-
 保持上一次的cookie
 https://doc.scrapy.org/en/latest/topics/request-response.html
 yield Request(url,callback=self.parse,meta={'dont_merge_cookies': True})
 
-scrapy发起request请求并提交参数
+scrapy发起request请求并提交参数(默认请求方式是：POST)
 yield scrapy.FormRequest(url,callback=self.parse,formdata={},method="GET",errback=self.errparse,meta={})
+#scrapy在parse方法后
+from scrapy shell import inspect_response
+inspect_response(response,self)
 
 工具urllib encode转换
 https://www.cnblogs.com/caicaihong/p/5687522.html
@@ -193,7 +163,6 @@ wordcloud 云词 https://github.com/amueller/word_cloud
 https://blog.csdn.net/qq_25819827/article/details/78991733
 
 1. 分词
---------
 jieba.cut 方法接受三个输入参数: 需要分词的字符串；
 cut_all 参数用来控制是否采用全模式，默认Flase，一般也用flase
 ；HMM 参数用来控制是否使用 HMM 模型
@@ -206,17 +175,15 @@ jieba.cut 以及 `jieba.cut_for_search` 返回的结构都是一个可迭代的 
 jieba.lcut 以及 `jieba.lcut_for_search` 直接返回 list
 jieba.Tokenizer(dictionary=DEFAULT_DICT)` 新建自定义分词器，可用于同时使用不同词典。`jieba.dt` 为默认分词器，所有全局分词相关函数都是该分词器的映射。
 
+
 jb=jieba.cut(str)---> 一个可迭代对象
 变成列表
 jbl=[i for i in jb]
-
 jbl=jieba.lcut(str)---> 一个列表
+
 from collections import Counter
-
 abc = [1,2,454,3,6,3,1,3,5,6,8,4,3,8,4,2,1,2,3,]
-
 counts = Counter(abc)
-
 counter.most_common（）--〉变成一个含元组的列表
 
 有个字符串相似度检测的库，difflib
@@ -225,33 +192,28 @@ query_str = '市公安局'
 s1 = '广州市邮政局'
 difflib.SequenceMatcher(None, query_str, s1).quick_ratio() 
 
-
-字符串转换成字典：
-https://www.cnblogs.com/OnlyDreams/p/7850920.html
+import redis
+pool=redis.ConnectionPool(host='',port=6379,db=0,password=''，decode_responses=True)
+r=redis.StrictRedis(connection_pool=pool)
 Redis 发布订阅
 https://blog.csdn.net/selina361/article/details/79708501?utm_source=blogxgwz8
-
 import redis
 pool=redis.ConnectionPool(host='',port=6379,db=0,password=''，decode_responses=True)
 r=redis.StrictRedis(connection_pool=pool)
 
+#new_
 崔庆才的github
 https://github.com/Python3WebSpider/ProxyPool/tree/master/proxypool
+字符串转换成字典： https://www.cnblogs.com/OnlyDreams/p/7850920.html
+python时间转换：  https://www.linuxidc.com/Linux/2018-12/155919.htm
 
-Redis 发布订阅
-https://blog.csdn.net/selina361/article/details/79708501?utm_source=blogxgwz8
-import redis
-pool=redis.ConnectionPool(host='',port=6379,db=0,password=''，decode_responses=True)
-r=redis.StrictRedis(connection_pool=pool)
+https://opencv.org/releases.html（发布）
+https://www.cnblogs.com/Undo-self-blog/p/8423851.html
+linux社区python和opencv
+https://www.linuxidc.com/topicnews.aspx?tid=17
+https://www.linuxidc.com/Linux/2015-08/121400.htm
 
-
-
-#在parse方法后
-from scrapy shell import inspect_response
-inspect_response(response,self)
-
-
-
-
+夜神模拟器
+https://blog.csdn.net/hihell/article/details/86065636
 
 
