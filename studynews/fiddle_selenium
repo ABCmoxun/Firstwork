@@ -1,14 +1,31 @@
-fiddler
-fiddler参考文档:https://www.cnblogs.com/woaixuexi9999/p/9247705.html
-find可以查询任何字符串，和参数
+
+fiddler参考文档:
+https://www.cnblogs.com/woaixuexi9999/p/9247705.html
+安装fiddler，使用默认安装就好了
+第一次需要配置一下
+Tools-->options-->Https-->(勾选三个) captuere,Decryptxx,Ignorexx(若有弹出框要点肯定的)
+-->Actions(选第一个：Trust tools)--ok
+
+主页面：
+左边：
+需要抓取：File-->captuure(第一个)是否勾选 #左下capturing是否工作
+清除内容：X-->Remove all
+停止抓取：File-->captuure(第一个)
+左下：黑色条框可以输入指令：
+
+find很重要，find可以查询任何字符串，和参数（url）
+右边上面：Inspectors(筛选)、composer（发送请求）
 在可以发起请求（点击composer）
-可以发起get、post、.....
-左边中间空白框填写请求头
-左边下边填请求参数
+composer：可以发起get、post、.....
+左边中间空白框填写请求头，左边下边填请求参数
 
 在Fiddler2模拟POST请求的时候，在请求头的输入框里面，
-需要设置 ContentType:application/x-www-form-urlencoded
+需要设置 ContentType:application/x-www-form-urlencoded-->excute
+右边下面：
+request一般看：Rew(!!!), webForms,cookies
+response一般看：Rew(!!!)，Json,Textviews,imagview(有图片时)   #需要点：Response body is encodeed.click to decode
 在 Request Headers 栏添加一行 Content-Type: application/x-www-form-urlencoded ，这是 POST 请求需要的信息，区分大小写
+
 
 cookiedict={}
 requests.utils.add_dict_to_cookiejar(ssrequest.cookies,cookiedict)
@@ -18,13 +35,14 @@ cookiedict={}
 for item in response.cookies:
 	cookiedict[item.name]=item.value
 
+
+selenium的无头浏览器
 from selenium import webdriver
 options = webdriver.ChromeOptions()
 options.add_argument('lang=zh_CN.UTF-8')  # 设置中文
 browser = webdriver.Chrome(chrome_options=options)  # 更换头部
 #添加cookie
 browser.add_cookie({xx:yy})
-
 from selenium import webdriver
 https://blog.csdn.net/qq_34869975/article/details/78785554  #看看
 options = webdriver.ChromeOptions()  # 进入浏览器设置
@@ -68,17 +86,12 @@ img.save('captcha.png')
 #将截取的验证码上传到云打码进行在线识别
 text = yanzheng('captcha.png')
 
-
 import pytesseract
 from PIL import Image
 image = Image.open("1.jpg")
 text = pytesseract.image_to_string(image,lang='chi_sim') #使用简体中文解析图片
 print(text)
 
-百度文字识别接口文档：
-http://ai.baidu.com/docs#/OCR-Python-SDK/07883957
-开发资源---文档中心---视觉技术下的文字识别---->API文档---SDK文档中的python语言
-https://ai.baidu.com/docs#/（文档中心--百度AI-百度AI开放平台）-->文字识别-->SDK文档
 
 
 
