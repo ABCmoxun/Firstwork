@@ -1,0 +1,80 @@
+
+菜鸟教程：http://www.runoob.com/numpy/numpy-matplotlib.html
+from matplotlib impor4t pyplot as plt
+
+figure(num = None,figsize = None,dpi = None, facecolor = None,edgecolor = None)   #创建绘图对象
+https://www.jianshu.com/p/250eaa709b73
+1------
+plt.plot([x], y, [fmt], data=None, **kwargs)
+可选参数[fmt] 是一个字符串来定义图的基本属性如：颜色(color)，点型(marker)，线型(linestyle)，具体形式 
+fmt = '[color][marker][linestyle]'
+可选参数：linewidth=1, markersize=6
+
+2------
+pie 函数格式
+https://www.jianshu.com/p/250eaa709b73
+https://www.cnblogs.com/biyoulin/p/9565350.html
+pie(x, explode=None, labels=None, colors=None, autopct=None,
+        pctdistance=0.6, shadow=False, labeldistance=1.1, startangle=None,
+        radius=None, counterclock=True, wedgeprops=None, textprops=None,
+        center=(0, 0), frame=False, rotatelabels=False, hold=None, data=None)
+
+x:   (每一块)的比例，如果sum(x) > 1会使用sum(x)归一化；
+labels:(每一块)饼图外侧显示的说明文字；
+explode :(每一块)离开中心距离；
+startangle :起始绘制角度,默认图是从x轴正方向逆时针画起,如设定=90则从y轴正方向画起；
+shadow  :在饼图下面画一个阴影。默认值：False，即不画阴影；
+labeldistance :label标记的绘制位置,相对于半径的比例，默认值为1.1, 如<1则绘制在饼图内侧；
+autopct :控制饼图内百分比设置,可以使用format字符串或者format function
+        '%1.1f'指小数点前后位数(没有用空格补齐)；
+pctdistance :类似于labeldistance,指定autopct的位置刻度,默认值为0.6；
+radius  :控制饼图半径，默认值为1；
+counterclock ：指定指针方向；布尔值，可选参数，默认为：True，即逆时针。将值改为False即可改为顺时针。
+wedgeprops ：字典类型，可选参数，默认值：None。参数字典传递给wedge对象用来画一个饼图。例如：wedgeprops={'linewidth':3}设置wedge线宽为3。
+textprops ：设置标签（labels）和比例文字的格式；字典类型，可选参数，默认值为：None。传递给text对象的字典参数。
+center ：浮点类型的列表，可选参数，默认值：(0,0)。图标中心位置。
+frame ：布尔类型，可选参数，默认值：False。如果是true，绘制带有表的轴框架。
+rotatelabels ：布尔类型，可选参数，默认为：False。如果为True，旋转每个label到指定的角度。
+
+plt.rcParams['font.sans-serif']=['SimHei']  #用来正常显示中文标签
+参数：autopct='%1.1f%%'；autopct='%1.2f%%'
+plt.axis('equal')   #该行代码使饼图长宽相等
+label_list = ["one", "two", "three"] # 各部分标签
+size = [55, 35, 10]    #各部分比例大小
+color = ["red", "green", "blue"]  # 各部分颜色
+plt.title("饼图示例-8月份家庭支出")
+plt.text(1,-1.2,'By:Biyoulin')
+
+3------
+绘制条形图  #绘制水平条形图时使用barh()参数用法相同
+plt.bar(left=x, height=y, alpha, width, color, edgecolor, label, lw)
+
+left: 	横坐标的位置序列
+height:		纵坐标的数值序列，也就是柱形图的高度
+alpha:		图形透明度
+width:		柱形图的宽度，一般设为0.8
+facecolor:	柱形图的填充颜色
+edgecolor:	图形边缘的颜色
+label:		图例
+lw:		边缘线的宽度
+
+
+
+
+绘制直方图
+plt.hist(data, bins, normed, color, edgecolor, alpha)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
