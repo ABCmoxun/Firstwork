@@ -37,7 +37,7 @@ frame ：布尔类型，可选参数，默认值：False。如果是true，绘�
 rotatelabels ：布尔类型，可选参数，默认为：False。如果为True，旋转每个label到指定的角度。
 
 plt.rcParams['font.sans-serif']=['SimHei']  #用来正常显示中文标签
-参数：autopct='%1.1f%%'；autopct='%1.2f%%'
+参数：autopct='%1.1f%%'；autopct='%1.2f%%'      #保留小数的位数
 plt.axis('equal')   #该行代码使饼图长宽相等
 label_list = ["one", "two", "three"] # 各部分标签
 size = [55, 35, 10]    #各部分比例大小
@@ -58,14 +58,36 @@ edgecolor:	图形边缘的颜色
 label:		图例
 lw:		边缘线的宽度
 
-
-
-
 绘制直方图
 plt.hist(data, bins, normed, color, edgecolor, alpha)
 
+#----
+子图问题
+plt.subplots()
+官方文档：https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html
+行列共享问题：https://www.cnblogs.com/zhouzhe-blog/p/9614761.html
+部分函数(图形的种类)：https://www.cnblogs.com/TensorSense/p/6802280.html
+plt.subplots(nrows= 1,ncols=1,sharex= False,sharey = False,squeez =True,subplot_kw=无,gridspec_kw =无,** fig_kw)
 
 
+散点图：
+plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
+plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
+#有中文出现的情况，需要u'内容'
+https://blog.csdn.net/u012328159/article/details/79446910
+https://blog.csdn.net/qiu931110/article/details/68130199
+plt.scatter()
+#注：color可以设置:c=list(range(10))
+https://blog.csdn.net/weixin_40040404/article/details/81235578
+c=d, cmap='jet': 渐变颜色映射
+cmap_list元素后面加'_r'表示逆向渐变，如 bwr蓝白红 ---> bwr_r 红白蓝
+d = np.sqrt(x**2 + y**2)    # 点距离(0,0)的距离，距离远近用渐变色反映出来
+plt.scatter(x, y, marker='o',s=30,c=d, cmap='jet_r')
+
+--------------------- 
+https://matplotlib.org
+绘制极坐标图
+plt.polar(theta, r)
 
 
 
