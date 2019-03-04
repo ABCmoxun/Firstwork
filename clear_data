@@ -39,6 +39,20 @@ df['city'].drop_duplicates(keep='last')
 9、数据替换：
 df['city'].replace('sh', 'shanghai')
 
+https://www.cnblogs.com/stream886/p/6021743.html；https://blog.csdn.net/rwangnqian/article/details/79067490
+tt=pd.DataFrame()
+是否有重复值：
+tt.duplicated()--np.array =>bool
+删除重复值：
+tt.drop_duplicates(keep=False,inplace=True)
+
+tt.isnull()--〉pd.serres
+tt.notnull()--〉pd.serres
+
+tt.isnull().any()-->bool值    #这是按照列统计的空值
+tt[tt.isnull().values==True]  #查看哪些值是空值
+loandata.fillna(0)  #用0来填充
+loandata.dropna()   #删除空值
 
 	
 
