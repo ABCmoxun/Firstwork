@@ -1,4 +1,5 @@
 
+seaborn库: pip install seaborn
 菜鸟教程：http://www.runoob.com/numpy/numpy-matplotlib.html
 from matplotlib impor4t pyplot as plt
 
@@ -88,6 +89,31 @@ plt.scatter(x, y, marker='o',s=30,c=d, cmap='jet_r')
 https://matplotlib.org
 绘制极坐标图
 plt.polar(theta, r)
+theta:角度数组
+r: 极轴数组。
+还有另外两种形式也可画极坐标图形:
+1、plt.subplot(121, projection='polar')
+ax1.plot(theta,theta/6,'--',lw=2)
+2、plt.gca(projection='polar')  # 设置极坐标系
+plt.plot()
+极坐标图设置
+https://www.cnblogs.com/kallan/p/6738577.html
+1 极坐标正方向
+set_theta_direction方法用于设置极坐标的正方向
+当set_theta_direction的参数值为1,'counterclockwise'或者是'anticlockwise'的时候，
+正方向为逆时针；默认情况下正方向为逆时针
+当set_theta_direction的参数值为-1或者是'clockwise'的时候，正方向为顺时针；
+ex: ax2.set_theta_direction(-1)
+
+2 极坐标0°位置
+0°可设置在八个位置，分别为N, NW, W, SW, S, SE, E, NE;默认情况下0°位于E方位
+当set_theta_zero_location的参数值为'N','NW','W','SW','S','SE','E','NE'时，0°分别对应的位置为方位N, NW, W, SW, S, SE, E, NE；
+ex: ax2.set_theta_zero_location('N')
+3、极坐标角度网格线显示
+set_thetagrids方法用于设置极坐标角度网格线显示
+参数为所要显示网格线的角度值列表
+默认显示0°、45°、90°、135°、180°、225°、270°、315°的网格线
+ex: ax2.set_thetagrids(np.arange(0.0, 360.0, 30.0))
 
 
 
