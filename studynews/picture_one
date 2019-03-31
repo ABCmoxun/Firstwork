@@ -1,0 +1,4 @@
+图片处理：start
+安装： tesseract，pytesseract,pyocr,Pillow等，
+参见：pythonABC：http://pythonabc.org/index.php/2018-02-03-12-13-46/tesseract
+在python程序中应用openCV，老规矩：先安装opencv-python后引进import cv2
