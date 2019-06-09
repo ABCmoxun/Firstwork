@@ -80,48 +80,7 @@ inspect_response(response,self)
 https://www.cnblogs.com/caicaihong/p/5687522.html
 url.parse.unquote()
 
-#-----------
-安装jieba
-pip install jieba 
-https://github.com/fxsjy/jieba#3
-参考 ：https://blog.csdn.net/still_night/article/details/78998659；http://www.ruanyifeng.com/blog/2013/03/tf-idf.html
-pkuseg 分词: 
-pip install pkuseg
-https://github.com/yishuihanhan/pkuseg-python
 
-wordcloud 云词 https://github.com/amueller/word_cloud
-参考：https://blog.csdn.net/cy776719526/article/details/80171790;https://blog.csdn.net/u010309756/article/details/67637930
-https://blog.csdn.net/qq_25819827/article/details/78991733
-
-1. 分词
-jieba.cut 方法接受三个输入参数: 需要分词的字符串；
-cut_all 参数用来控制是否采用全模式，默认Flase，一般也用flase
-；HMM 参数用来控制是否使用 HMM 模型
-
-jieba.cut_for_search 方法接受两个参数：需要分词的字符串；是否使用 HMM 模型。
-该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细
-
-待分词的字符串可以是 unicode 或 UTF-8 字符串、GBK 字符串。注意：不建议直接输入 GBK 字符串，可能无法预料地错误解码成 UTF-8
-jieba.cut 以及 `jieba.cut_for_search` 返回的结构都是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)，或者用
-jieba.lcut 以及 `jieba.lcut_for_search` 直接返回 list
-jieba.Tokenizer(dictionary=DEFAULT_DICT)` 新建自定义分词器，可用于同时使用不同词典。`jieba.dt` 为默认分词器，所有全局分词相关函数都是该分词器的映射。
-
-
-jb=jieba.cut(str)---> 一个可迭代对象
-变成列表
-jbl=[i for i in jb]
-jbl=jieba.lcut(str)---> 一个列表
-
-from collections import Counter
-abc = [1,2,454,3,6,3,1,3,5,6,8,4,3,8,4,2,1,2,3,]
-counts = Counter(abc)
-counter.most_common（）--〉变成一个含元组的列表
-
-有个字符串相似度检测的库，difflib
-import difflib
-query_str = '市公安局'
-s1 = '广州市邮政局'
-difflib.SequenceMatcher(None, query_str, s1).quick_ratio() 
 
 import redis
 pool=redis.ConnectionPool(host='',port=6379,db=0,password=''，decode_responses=True)
