@@ -1,0 +1,42 @@
+import jieba
+import wordcloud
+from scipy.misc import imread
+mask = imread("chinamap.jpg")
+excludes = { }
+f = open("新时代中国特色社会主义.txt", "r", encoding="utf-8")
+t = f.read()
+f.close()
+ls = jieba.lcut(t)
+txt = " ".join(ls)
+w = wordcloud.WordCloud(\
+    width = 1000, height = 700,\
+    background_color = "white",
+    font_path = "msyh.ttc", mask = mask
+    )
+w.generate(txt)
+w.to_file("grwordcloudm.png")
+
+
+3步：
+1.配置对象-->2.加载词云文本--->输出词云文件
+w=wordcloud.WordCloud(**kw)
+txt=" ".join(jiea.lcut(fp.read()))
+w.generate(txt)       #文本以逗号分隔
+w.to_file("xx.png")
+---
+加载形状必须为白色背景的图像。。。
+可选参数：
+width=400(默认值)
+height=200(默认值)
+
+min_font_size=10/max_font_size=20
+font_step=1(默认值)
+font_path=None(中文设置为微软雅黑：msyh.ttc)
+max_words=200(默认值,显示最大单词数量)
+stop_word={}  #可以是元组，列表，集合不显示的单词列表。
+mask=mk
+from scipy.misc import imread
+mk = imread("chinamap.jpg")
+background_color=black(默认黑色)
+
+
