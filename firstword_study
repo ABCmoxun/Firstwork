@@ -1,4 +1,25 @@
+selenium 验证码截图和云打码的使用
+https://blog.csdn.net/DonQuixote_/article/details/82468778
+可以去看下：
+https://blog.csdn.net/Sioon_XUX/article/details/78617160
+http://www.cnblogs.com/mswyf/p/9361917.html
 
+fiddler参考文档
+https://www.cnblogs.com/woaixuexi9999/p/9247705.html
+爬虫项目
+https://yq.aliyun.com/articles/644882?spm=a2c4e.11155472.0.0.55af7c40a9qtM8
+
+
+js调试：
+	谷歌开发工具
+	https://blog.csdn.net/u014686180/article/details/45844251
+	Disable Cache(禁用缓存 – 开启这个就测试接口就不用每次到高级清理了)
+	Preserve log(保留日志 — 刷新重新加载也保留)
+	Hide data URLs – 这个是过滤data协议的东西（比如base64的图片），若是页面请求非常多的情况下，勾选这个，
+	可以让我们更快速的定位一些请求，因为默认展出的是ALL（所有请求）；
+	https://www.jb51.net/article/88891.htm
+	https://www.cnblogs.com/yuanchaoyong/p/6172034.html
+收藏：https://www.jianshu.com/p/a56946c01d87
 
 
 头条js解析：https://www.colabug.com/3297769.html
@@ -22,6 +43,3 @@ http://www.cnblogs.com/mswyf/p/9361917.html
 https://www.jianshu.com/p/db5be7e6edf4
 模拟登录百度：https://www.jianshu.com/p/de16a1093c7e
 https://www.jianshu.com/p/777b7712249c
-
-
-
